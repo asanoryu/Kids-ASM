@@ -1,17 +1,17 @@
-#Kids ASM
+# Kids ASM
 
 _Small educational REPL resembling an assembly like language for educational purposes_
 
 Designed to be as simple as possible, using a few commands and only integer values.
 
-##Registers:
+## Registers:
 Used as a tool to teach varibles.
 
 
         EAX, EBX - general purpose
         ERX - used as a temporary and result holder
 
-##Commands:
+## Commands:
 
 * Move
 
@@ -57,6 +57,7 @@ Used as a tool to teach varibles.
         <EAX: 3>   <EBX: None>  <ERX: 6>
 
 * Sub
+
     Subtracts value of EAX from ERX and stores result in ERX
     _Examples_:
 
