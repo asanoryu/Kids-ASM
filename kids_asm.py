@@ -112,7 +112,7 @@ def repl():
     print("=" * 60)
     while True:
 
-        print(f"\n {kasm}")
+        print(f"{kasm}")
         inp = input(">>")
         kasm.parse(inp)
     pass
