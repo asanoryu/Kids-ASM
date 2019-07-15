@@ -1,5 +1,6 @@
 """A mini ASM type toy languange for educational purposes."""
 
+import sys
 import click
 from typing import Optional, List
 
@@ -73,6 +74,8 @@ class Parser:
         return "Done"
 
     def _add(self, param: List) -> str:
+        if len(param) < 1:
+            return f"Error: Not enough parameters - expected 1 got {len(param)}"
         param = param[0]
         if param not in ("ebx", "eax"):
             return f"Error: ADD expects parameter to be either EAX or EBX! got {param}"
@@ -82,6 +85,8 @@ class Parser:
         return "Done"
 
     def _sub(self, param: List) -> str:
+        if len(param) < 1:
+            return f"Error: Not enough parameters - expected 1 got {len(param)}"
         param = param[0]
         if param not in ("ebx", "eax"):
             return f"Error: ADD expects parameter to be either EAX or EBX! got {param}"
@@ -91,6 +96,9 @@ class Parser:
         return "Done"
 
     def _read(self, param: List) -> str:
+        if len(param) < 1:
+            return f"Error: Not enough parameters - expected 1 got {len(param)}"
+
         param = param[0]
         if param not in ("ebx", "eax"):
             return f"Error: READ expects parameter to be either EAX or EBX! got {param}"
@@ -114,6 +122,9 @@ def repl():
 
         print(f"{kasm}")
         inp = input(">>")
+        if inp == "exit":
+            print("Goodbye!!!")
+            sys.exit()
         kasm.parse(inp)
     pass
 
